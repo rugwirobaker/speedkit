@@ -21,3 +21,10 @@ kill_signal = "SIGINT"
   [[services.ports]]
     port = "5201"
 
+
+[checks.tcp_alive]
+  grace_period = "10s"
+  interval = "15s"
+  port = 5201
+  timeout = "10s"
+  type = "tcp"
