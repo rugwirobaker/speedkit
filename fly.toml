@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for speedkit on 2023-06-17T13:20:05+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "speedkit"
+primary_region = "jnb"
+kill_signal = "SIGINT"
+
+[[services]]
+  internal_port = 5201
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = "5201"
+
+[[services]]
+  internal_port = 5202
+  protocol = "udp"
+
+  [[services.ports]]
+    port = "5201"
+
